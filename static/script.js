@@ -14,3 +14,11 @@ $("button").click (function() {
        console.log("data", data)
     });
 });
+
+// Handlebars
+var renderTemplate = function (templateId, targetId, context) {
+    var source = $(templateId).html();
+    var template = Handlebars.compile(source);
+    var html = template(context);
+    $(targetId).append(html);
+}
