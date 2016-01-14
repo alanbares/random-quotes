@@ -12,6 +12,7 @@ $("button").click (function() {
 
     $.getJSON(apiUrl, function (data) {
        console.log("data", data)
+       $("#randomQuotes").append("<p>" + data.quoteText + "</p>");
     });
 });
 
