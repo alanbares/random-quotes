@@ -30,9 +30,13 @@ $(document).ready(function() {
 
     $.getJSON(apiUrl, function (data) {
        console.log("data", data)
-	   $("#randomQuotes").append("<p>" + data.quoteText + "</p>");
+	   $("#randomQuotes").append("<p>" + data.quoteText + "-" + " " + data.quoteAuthor + "</p>");
 	});
 	}
+
+	$(".quoteButton").click (function() {
+		getQuotes();
+	});
 });
 // Handlebars
 //var renderTemplate = function (templateId, targetId, context) {
