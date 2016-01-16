@@ -24,13 +24,22 @@ $(document).ready(function() {
         method = "?method=getQuote",
         lang = "&lang=en",
         format = "&format=jsonp&jsonp=?",
-        apiUrl = baseUrl + method + lang + format;
+        apiUrl = baseUrl + method + lang + format,
+        author=$("#author");
 
     console.log("url", apiUrl);
 
     $.getJSON(apiUrl, function (data) {
        console.log("data", data)
-	   $("#randomQuotes").append("<p>" + data.quoteText + "-" + " " + data.quoteAuthor + "</p>");
+	   $("#randomQuotes").append("<p>" + data.quoteText + "</p>");
+
+        // Displays Unknown if quote has no author
+        if (data.quoteAuthor === "") {
+            author.text("- Unknown");
+        }
+        else {
+            author.text("-" + data.quoteAuthor);
+        }
 	});
 	}
 
