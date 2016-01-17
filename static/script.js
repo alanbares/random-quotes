@@ -17,28 +17,28 @@
 //});
 
 $(document).ready(function() {
-	getQuotes();
+    var author=$("#author"),
+        quotes=$("#randomQuotes")
 
 	function getQuotes() {
 		var baseUrl = "http://api.forismatic.com/api/1.0/",
         method = "?method=getQuote",
         lang = "&lang=en",
         format = "&format=jsonp&jsonp=?",
-        apiUrl = baseUrl + method + lang + format,
-        author=$("#author");
+        apiUrl = baseUrl + method + lang + format;
 
     console.log("url", apiUrl);
 
     $.getJSON(apiUrl, function (data) {
        console.log("data", data)
-	   $("#randomQuotes").append("<p>" + data.quoteText + "</p>");
+	   quotes.html("<p>" + data.quoteText + "</p>");
 
         // Displays Unknown if quote has no author
         if (data.quoteAuthor === "") {
-            author.text("- Unknown");
+            author.html("- Unknown");
         }
         else {
-            author.text("-" + data.quoteAuthor);
+            author.html("-" + data.quoteAuthor);
         }
 	});
 	}
