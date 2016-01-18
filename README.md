@@ -1,2 +1,2 @@
 # random-quotes
-FCC random quote machine 
+Simple random quote machine using forismatic api. 
