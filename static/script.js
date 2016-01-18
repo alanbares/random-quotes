@@ -2,8 +2,9 @@
 
 $(document).ready(function() {
     var author=$("#author"),
-        quotes=$("#randomQuotes")
+        quotes=$("#randomQuotes");
 
+    //Forismatic api call
 	function getQuotes() {
 		var baseUrl = "http://api.forismatic.com/api/1.0/",
         method = "?method=getQuote",
@@ -13,8 +14,9 @@ $(document).ready(function() {
 
     console.log("url", apiUrl);
 
+
     $.getJSON(apiUrl, function (data) {
-       console.log("data", data)
+       console.log("data", data);
 	   quotes.html("<p>" + data.quoteText + "</p>");
 
         // Displays Unknown if quote has no author
@@ -27,9 +29,11 @@ $(document).ready(function() {
 	});
 	}
 
-	$(".quoteButton").click (function() {
-		getQuotes();
-	});
+    //Quote
+	$("#quoteButton").click(getQuotes);
+
+    //Tweet
+
 });
 
 // Handlebars
