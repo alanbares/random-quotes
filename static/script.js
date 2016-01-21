@@ -18,10 +18,11 @@ $(document).ready(function() {
 
     console.log("url", apiUrl);
 
-
+    //Display data on page and tweets data out
     $.getJSON(apiUrl, function (data) {
        console.log("data", data);
-	   $quotes.html("<p>" + data.quoteText + "</p>");
+       $quotes.html("<p>" + data.quoteText + "</p>");
+       $tweetButton.attr("href", 'https://twitter.com/intent/tweet?text=' + data.quoteText);
 
         // Displays Unknown if quote has no author
         if (data.quoteAuthor === "") {
@@ -35,11 +36,6 @@ $(document).ready(function() {
 
     //Quote
 	$quoteButton.click(getQuotes);
-
-    //Tweet
-    $tweetButton.click(function() {
-        $tweetButton.attr("href", 'https://twitter.com/intent/tweet?text=' + "test");
-    });
 });
 
 // Handlebars
