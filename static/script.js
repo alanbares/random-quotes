@@ -1,8 +1,12 @@
 /*global $ */
 
 $(document).ready(function() {
-    var author=$("#author"),
-        quotes=$("#randomQuotes");
+    var $author=$("#author"),
+        $quotes=$("#quoteMachine"),
+        $tweetButton=$(".twitter-share-button"),
+        $quoteButton=$("#quoteButton");
+
+
 
     //Forismatic api call
 	function getQuotes() {
@@ -17,23 +21,25 @@ $(document).ready(function() {
 
     $.getJSON(apiUrl, function (data) {
        console.log("data", data);
-	   quotes.html("<p>" + data.quoteText + "</p>");
+	   $quotes.html("<p>" + data.quoteText + "</p>");
 
         // Displays Unknown if quote has no author
         if (data.quoteAuthor === "") {
-            author.html("Unknown");
+            $author.html("Unknown");
         }
         else {
-            author.html(data.quoteAuthor);
+            $author.html(data.quoteAuthor);
         }
 	});
 	}
 
     //Quote
-	$("#quoteButton").click(getQuotes);
+	$quoteButton.click(getQuotes);
 
     //Tweet
-
+    $tweetButton.click(function() {
+        $tweetButton.attr("href", 'https://twitter.com/intent/tweet?text=' + "test");
+    });
 });
 
 // Handlebars
