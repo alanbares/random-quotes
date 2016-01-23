@@ -34,14 +34,8 @@ $(document).ready(function() {
 	});
 	}
 
-    //Quote
+
 	$quoteButton.click(getQuotes);
 });
 
-// Handlebars
-//var renderTemplate = function (templateId, targetId, context) {
-//    var source = $(templateId).html();
-//    var template = Handlebars.compile(source);
-//    var html = template(context);
-//    $(targetId).append(html);
-//}
+
