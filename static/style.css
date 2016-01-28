@@ -3,7 +3,16 @@
 *Organized from top to bottom
 * Name of section / Search term
 
-1.
+1. Quote Machine / #Quotes
 
 ------------------------------------------------------------------**/
 
+/* #Quotes
+================================ */
+.quotes {
+	position: absolute;
+	top: 30%;
+	bottom: 10%;
+	right: -5%;
+	left: -5%;
+}
