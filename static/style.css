@@ -3,9 +3,19 @@
 *Organized from top to bottom
 * Name of section / Search term
 
-1. Quote Machine / #Quotes
+1. Background / #Background
+2. Quote Machine / #Quotes
 
 ------------------------------------------------------------------**/
+
+/* #Background
+================================ */
+body {
+    background: #c3c3c3;
+}
+
+
+
 
 /* #Quotes
 ================================ */
@@ -19,4 +29,8 @@
 
 .forsimatic {
     padding-top: 1%;
+}
+
+.quote-box{
+    color: black;
 }
